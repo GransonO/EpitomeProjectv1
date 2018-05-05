@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/school"
+        android:background="@drawable/round_back"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/img_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/img"
+        android:paddingEnd="5dp"
+        android:textSize="12sp"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:fontFamily="@font/gotham"
+        android:text="Item Name"
+        android:layout_marginBottom="2dp"
+        android:textColor="#ffffff" />
+</RelativeLayout>
