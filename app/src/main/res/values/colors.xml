@@ -2,8 +2,13 @@
 <resources>
     <color name="colorPrimary">#fa3236</color>
     <color name="colorPrimaryDark">#ff0004</color>
-    <color name="colorAccent">#ffffff</color>
+    <color name="colorAccent">#fd3e3e</color>
     <color name="bg">#ffffff</color>
 
     <color name="black_overlay">#66000000</color>
+
+    <!--Bottom Nav Bar-->
+    <color name="bb_inActiveBottomBarItemColor">#747474</color>
+    <color name="bb_darkBackgroundColor">#212121</color>
+    <color name="bb_tabletRightBorderDark">#505050</color>
 </resources>

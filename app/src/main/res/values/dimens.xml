@@ -2,4 +2,14 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <item name="normal_speed" type="dimen" format="float">100</item>
+    <item name="high_speed" type="dimen" format="float">50</item>
+    <item name="low_speed" type="dimen" format="float">120</item>
+
+    <!--Bottom Nav Bar-->
+
+    <dimen name="bb_height">56dp</dimen>
+    <dimen name="bb_default_elevation">8dp</dimen>
+    <dimen name="bb_fake_shadow_height">4dp</dimen>
 </resources>

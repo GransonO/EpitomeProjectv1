@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import africa.apeiron.batafind.CATEGORIES.CategoryActivity;
+import africa.apeiron.batafind.HOME.HomeActivity;
 
 public class OpeningActivity extends AppCompatActivity {
 
@@ -22,7 +22,7 @@ public class OpeningActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }finally {
-                    Intent X = new Intent(OpeningActivity.this,CategoryActivity.class);
+                    Intent X = new Intent(OpeningActivity.this,HomeActivity.class);
                     startActivity(X);
                 }
             }

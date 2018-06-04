@@ -1,17 +1,16 @@
-package africa.apeiron.batafind.CATEGORIES;
+package africa.apeiron.batafind.GROUPED_CATEGORY;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 /**
- * Created by Granson on 08-Apr-18.
+ * Created by Granson on 25-Mar-18.
  */
-
-public class Category_class extends RecyclerView.ItemDecoration {
+public class GCSpacesItemDecoration extends RecyclerView.ItemDecoration {
     private final int mSpace;
 
-    public Category_class(int space) {
+    public GCSpacesItemDecoration(int space) {
         this.mSpace = space;
     }
 

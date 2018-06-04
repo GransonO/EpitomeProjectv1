@@ -5,12 +5,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 /**
- * Created by Granson on 25-Mar-18.
+ * Created by Granson on 08-Apr-18.
  */
-public class HomeSpacesItemDecoration extends RecyclerView.ItemDecoration {
+
+public class HomeClass extends RecyclerView.ItemDecoration {
     private final int mSpace;
 
-    public HomeSpacesItemDecoration(int space) {
+    public HomeClass(int space) {
         this.mSpace = space;
     }
 

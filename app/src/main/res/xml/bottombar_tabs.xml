@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/home"
+        icon="@drawable/home_logo"
+        title="Home"/>
+    <tab
+        id="@+id/men"
+        icon="@drawable/men_face"
+        title="Men"/>
+    <tab
+        id="@+id/ladies"
+        icon="@drawable/lady_icon"
+        title="Ladies"/>
+    <tab
+        id="@+id/kids"
+        icon="@drawable/kids_icon"
+        title="Kids"/>
+    <tab
+        id="@+id/profile"
+        icon="@drawable/shelves"
+        title="Profile"/>
+        <!-- barColorWhenSelected="#ba9001"-->
+</tabs>

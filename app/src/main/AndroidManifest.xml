@@ -31,7 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HOME.HomeAction" />
+        <activity android:name=".GROUPED_CATEGORY.GroupedCategoryAction" />
         <activity android:name=".ITEM_DISPLAY.DisplayProducts" />
         <activity android:name=".ITEM_DETAILS.SelectedItem" />
 
@@ -41,7 +41,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".CATEGORIES.CategoryActivity"></activity>
+        <activity android:name=".HOME.HomeActivity"></activity>
     </application>
 
 </manifest>

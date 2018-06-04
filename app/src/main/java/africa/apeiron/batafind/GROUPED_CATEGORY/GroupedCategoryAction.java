@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.HOME;
+package africa.apeiron.batafind.GROUPED_CATEGORY;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import africa.apeiron.batafind.R;
 
-public class HomeAction extends AppCompatActivity {
+public class GroupedCategoryAction extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
     String category;
@@ -17,7 +17,7 @@ public class HomeAction extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_activity);
+        setContentView(R.layout.grouped_category);
 
         X = getIntent();
         category = X.getStringExtra("Name");
@@ -25,9 +25,9 @@ public class HomeAction extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.home_grid);
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
 
-        HomeAdapter adapter = new HomeAdapter(this,category);
+        GroupedCategoryAdapter adapter = new GroupedCategoryAdapter(this,category);
         mRecyclerView.setAdapter(adapter);
-        HomeSpacesItemDecoration decoration = new HomeSpacesItemDecoration(16);
+        GCSpacesItemDecoration decoration = new GCSpacesItemDecoration(16);
         mRecyclerView.addItemDecoration(decoration);
 
     }

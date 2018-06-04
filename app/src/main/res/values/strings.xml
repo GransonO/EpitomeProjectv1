@@ -10,4 +10,7 @@
     <string name="button">Button</string>
     <string name="check_if_available">Check availability</string>
     <string name="todo">TODO</string>
+    <string name="NA"><ul>New arrivals</ul></string>
+    <string name="PD"><ul>Popular products</ul></string>
+    <string name="more">more...</string>
 </resources>
