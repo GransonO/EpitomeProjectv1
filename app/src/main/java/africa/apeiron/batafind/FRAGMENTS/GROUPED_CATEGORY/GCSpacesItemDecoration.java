@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.GROUPED_CATEGORY;
+package africa.apeiron.batafind.FRAGMENTS.GROUPED_CATEGORY;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;

@@ -67,13 +67,6 @@ public class SmsReceiver extends BroadcastReceiver {
                 n = builder.getNotification();
                 nm.notify(Id, n);
             }
-
-
-
-
-
-
-
         }
     }
 

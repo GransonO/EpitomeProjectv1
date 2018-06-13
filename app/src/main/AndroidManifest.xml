@@ -41,7 +41,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".HOME.HomeActivity"></activity>
+        <activity android:name=".HOME.HomeActivity" />
+        <activity android:name=".REGISTRATION.SignUp"></activity>
     </application>
 
 </manifest>

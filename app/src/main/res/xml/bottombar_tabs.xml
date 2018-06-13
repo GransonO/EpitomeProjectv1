@@ -20,5 +20,6 @@
         id="@+id/profile"
         icon="@drawable/shelves"
         title="Profile"/>
+
         <!-- barColorWhenSelected="#ba9001"-->
 </tabs>

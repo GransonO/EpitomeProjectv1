@@ -18,7 +18,7 @@ public class OpeningActivity extends AppCompatActivity {
             public void run() {
                 super.run();
                 try {
-                    sleep(3000);
+                    sleep(2500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }finally {

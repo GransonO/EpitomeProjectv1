@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shoes"
+    tools:context="africa.apeiron.batafind.REGISTRATION.SignUp">
+
+
+    <EditText
+        android:id="@+id/name_edit"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="177dp"
+        android:background="@drawable/back_shape"
+        android:ems="10"
+        android:fontFamily="@font/gotham"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textAlignment="viewStart"
+        android:textColor="#fff" />
+
+        <EditText
+            android:id="@+id/password_edit"
+            android:layout_width="250dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@+id/name_edit"
+            android:background="@drawable/back_shape"
+            android:ems="10"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/gotham"
+            android:hint="Password"
+            android:textColor="#fff"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textAlignment="viewStart" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="243dp"
+        android:background="@drawable/button_back"
+        android:textColor="#fff"
+        android:text="Submit" />
+
+
+</RelativeLayout>

@@ -7,90 +7,12 @@
     android:background="#fff"
     tools:context="africa.apeiron.batafind.HOME.HomeActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        app:elevation="0dp"
-        android:background="@android:color/transparent">
+        android:layout_height="match_parent">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="5dp">
-
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/new_arrivals"
-                    android:contentDescription="@string/todo" />
-
-                <TextView
-                    android:id="@+id/new_arrivals"
-                    android:layout_width="338dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginStart="40dp"
-                    android:fontFamily="@font/gotham"
-                    android:gravity="bottom"
-                    android:text="@string/NA"
-                    android:textColor="#545454"
-                    android:textSize="18sp" />
-
-            </RelativeLayout>
-
-            <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
-                android:id="@+id/first_recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                app:msrv_gravity="start"
-                app:msrv_ms_per_inch="@dimen/normal_speed" />
-
-        </LinearLayout>
-        <RelativeLayout
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="5dp">
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/popular"
-                android:contentDescription="@string/todo" />
-
-            <TextView
-                android:layout_width="341dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="40dp"
-                android:fontFamily="@font/gotham"
-                android:shadowColor="#606060"
-                android:text="@string/PD"
-                android:textColor="#545454"
-                android:textSize="18sp" />
-
-        </RelativeLayout>
-
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/home_grid"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="5dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
+    </android.support.v4.view.ViewPager>
 
     <com.roughike.bottombar.BottomBar
         android:id="@+id/bottomBar"

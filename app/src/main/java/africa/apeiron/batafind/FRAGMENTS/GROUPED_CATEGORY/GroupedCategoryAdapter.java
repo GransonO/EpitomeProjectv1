@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.GROUPED_CATEGORY;
+package africa.apeiron.batafind.FRAGMENTS.GROUPED_CATEGORY;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.race604.drawable.wave.WaveDrawable;
 import com.squareup.picasso.Picasso;
 
 import org.jsoup.Jsoup;
@@ -45,18 +46,19 @@ public class GroupedCategoryAdapter extends RecyclerView.Adapter<GroupedCategory
     String[] nameList;
 
 //All kids
-    int[] kids_img = {R.drawable.school,R.drawable.playing_kids,R.drawable.boys,
+    int[] kids_img = {R.drawable.playing_kids,R.drawable.school,R.drawable.boys,
             R.drawable.girls,R.drawable.infants, R.drawable.safari,R.drawable.rainbow,
             R.drawable.gal_vans,R.drawable.boy_vans,R.drawable.girls_dress,
             R.drawable.dress_boys
     };
 
-    String[] kids_list = {"School","All kids","Boys Style","Girls Style",
+    String[] kids_list = {"All kids","School","Boys Style","Girls Style",
             "Infants","Safari Kids","Shine","Girl Casual","Boys casuals","Girls dress","Boys Dress"
     };
 
-    String[] kids_links = {"http://batakenya.com/batakenya/c-5433_cl-70/school.html",
+    String[] kids_links = {
             "http://batakenya.com/batakenya/c-5172_cl-70/kids.html",
+            "http://batakenya.com/batakenya/c-5433_cl-70/school.html",
             "http://batakenya.com/batakenya/c-5236_cl-70/kids/boys/casual.html",
             "http://batakenya.com/batakenya/c-5246_cl-70/kids/girls/sandal.html",
             "http://batakenya.com/batakenya/c-5233_cl-70/kids/infants/sandals.html",

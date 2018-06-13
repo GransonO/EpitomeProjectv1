@@ -1,18 +1,18 @@
 package africa.apeiron.batafind.HOME;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 
-import africa.apeiron.batafind.GROUPED_CATEGORY.GroupedCategoryAction;
 import africa.apeiron.batafind.R;
 /**
  * Created by Granson on 08-Apr-18.
@@ -21,26 +21,18 @@ import africa.apeiron.batafind.R;
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MasonryView> {
 
 private Context myContext;
+ArrayList<String> shoe_image;
+ArrayList<String> shoe_name;
+ArrayList<String> shoe_link;
+String[] shoe_price;
 
-//Images
-        //int[] cat_img = {R.drawable.for_men,R.drawable.lady,R.drawable.playing_kids};
-
-        //String[] list = {"Men","Ladies","Kids"};
-
-    int[] cat_img = { R.drawable.for_men,R.drawable.safari,R.drawable.leather_shoes,
-            R.drawable.bata_casual,R.drawable.beach,R.drawable.weinbrenner,R.drawable.tommy_men,
-            R.drawable.bata_office_man,R.drawable.north_men,R.drawable.patapata,R.drawable.sports
-    };
-
-    String[] list = {"All Men", "Safari","Official","Casual","Sandals",
-            "Weinbrenner","Tommy Men","Bata collection","North Star",
-            "Patapata","Sports"
-    };
-
-
-public HomeAdapter(Context context) {
-        this.myContext = context;
-        }
+public HomeAdapter(Context context, ArrayList<String> name, ArrayList<String> image, ArrayList<String> link, String[] Prices) {
+    this.myContext = context;
+    this.shoe_image = image;
+    this.shoe_name = name;
+    this.shoe_link = link;
+    this.shoe_price = Prices;
+}
 
 @Override
 public MasonryView onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -52,24 +44,22 @@ public MasonryView onCreateViewHolder(ViewGroup parent, int viewType) {
 @Override
 public void onBindViewHolder(MasonryView holder, final int position) {
 
-        Picasso.get().load(cat_img[position]).into(holder.imageView);
+        Picasso.get().load(shoe_image.get(position)).into(holder.imageView);
 
         holder.imageView.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
 
-                Intent I = new Intent(myContext, GroupedCategoryAction.class);
-                I.putExtra("Name",list[position]);
-                myContext.startActivity(I);
+            Toast.makeText(myContext,shoe_name.get(position),Toast.LENGTH_LONG);
 
             }
         });
-        holder.textView.setText(list[position]);
+        holder.textView.setText(shoe_name.get(position));
         }
 
 @Override
 public int getItemCount() {
-        return list.length;
+        return shoe_name.size();
         }
 
 

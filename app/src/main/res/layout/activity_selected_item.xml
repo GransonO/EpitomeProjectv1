@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/red_leather"
+    android:background="@drawable/leather_txt"
     tools:context="africa.apeiron.batafind.ITEM_DETAILS.SelectedItem">
 
     <ImageView
@@ -137,11 +137,10 @@
 
     <com.github.bassaer.chatmessageview.view.ChatView
         android:id="@+id/chat_view"
-        android:layout_margin="5dp"
+        android:layout_margin="1dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/title"
-        android:background="#02ff0000"
-        />
+        android:background="#02ff0000"/>
 
 </RelativeLayout>

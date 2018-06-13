@@ -5,8 +5,6 @@
     android:background="@drawable/leather_txt"
     android:layout_height="match_parent">
 
-
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/masonry_grid"
         android:layout_width="match_parent"
