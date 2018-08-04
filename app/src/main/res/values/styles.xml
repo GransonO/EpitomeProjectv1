@@ -64,4 +64,19 @@
         <item name="android:textStyle">normal</item>
     </style>
 
+    <style name="No_Network">
+        <item name="textBold">true</item>
+        <item name="textColor">#ff3131</item>
+        <item name="font">@font/gotham</item>
+        <item name="textSize">14sp</item>
+        <item name="colorBackground">#ffffff</item>
+        <item name="solidBackground">false</item>
+        <item name="strokeWidth">3dp</item>
+        <!--item name="strokeColor">#fff</item-->
+        <item name="iconStart">@android:drawable/ic_menu_myplaces</item>
+        <!--item name="iconEnd">@drawable/ic</item-->
+        <item name="length">LONG</item>
+        <item name="gravity">top</item>
+        <item name="radius">10dp</item>
+    </style>
 </resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/my_profile"
+        icon="@drawable/profile_ic"
+        title="My Profile"/>
+    <tab
+        id="@+id/chat"
+        icon="@drawable/chat_ic"
+        title="Chat"/>
+    <tab
+        id="@+id/notify"
+        icon="@drawable/notify_ic"
+        title="Notifications"/>
+    <tab
+        id="@+id/discover"
+        icon="@drawable/disc_ic"
+        title="Discover"/>
+    <tab
+        id="@+id/history"
+        icon="@drawable/disc2_ic"
+        title="History"/>
+
+    <!-- barColorWhenSelected="#ba9001"-->
+</tabs>

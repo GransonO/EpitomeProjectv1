@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:id="@+id/app_bar"
         app:elevation="0dp"
         android:background="@android:color/transparent">
 
@@ -57,8 +58,12 @@
             </RelativeLayout>
 
         </LinearLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
         <RelativeLayout
             android:layout_height="wrap_content"
+            android:layout_below="@+id/app_bar"
             android:layout_width="wrap_content"
             android:layout_marginBottom="2dp"
             android:layout_marginTop="5dp">
@@ -68,6 +73,7 @@
                 android:layout_height="25dp"
                 android:id="@+id/pd"
                 android:layout_marginBottom="2dp"
+                android:layout_marginStart="5dp"
                 android:src="@drawable/popular"
                 android:contentDescription="@string/todo" />
 
@@ -87,10 +93,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/pd"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+            <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/shimmer_grid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/pd"
+                app:shimmer_demo_child_count="10"
+                app:shimmer_demo_grid_child_count="2"
+                app:shimmer_demo_layout="@layout/layout_demo_grid"
+                app:shimmer_demo_layout_manager_type="grid"
+                app:shimmer_demo_angle="20"/>
 
         </RelativeLayout>
-
-    </android.support.design.widget.AppBarLayout>
 
 </RelativeLayout>

@@ -24,14 +24,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".OpeningActivity">
+        <activity android:name=".REGISTRATION.SignUp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GROUPED_CATEGORY.GroupedCategoryAction" />
         <activity android:name=".ITEM_DISPLAY.DisplayProducts" />
         <activity android:name=".ITEM_DETAILS.SelectedItem" />
 
@@ -41,8 +40,12 @@
             </intent-filter>
         </receiver>
 
+        <service
+            android:name="com.novoda.merlin.service.MerlinService"
+            android:exported="false" />
+
         <activity android:name=".HOME.HomeActivity" />
-        <activity android:name=".REGISTRATION.SignUp"></activity>
+        <activity android:name=".ProfileActivity"></activity>
     </application>
 
 </manifest>

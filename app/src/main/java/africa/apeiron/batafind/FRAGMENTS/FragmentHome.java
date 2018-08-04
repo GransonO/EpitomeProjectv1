@@ -13,7 +13,11 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
+import com.muddzdev.styleabletoastlibrary.StyleableToast;
+import com.novoda.merlin.MerlinsBeard;
 import com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView;
 
 import org.jsoup.Jsoup;
@@ -24,16 +28,18 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import africa.apeiron.batafind.HOME.HomeActivity;
 import africa.apeiron.batafind.HOME.HomeAdapter;
 import africa.apeiron.batafind.HOME.HomeClass;
 import africa.apeiron.batafind.HOME.HorizontalAdapter;
 import africa.apeiron.batafind.R;
+import africa.apeiron.batafind.REGISTRATION.SignUp;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class FragmentHome extends Fragment {
 
     private Context context;
-    SweetAlertDialog newDialog,pop_Dialog;
+    //SweetAlertDialog newDialog,pop_Dialog;
 
     ArrayList<String> new_shoe_image = new ArrayList<>(),shoe_image = new ArrayList<>();
     ArrayList<String> new_shoe_name = new ArrayList<>(),shoe_name = new ArrayList<>();
@@ -41,8 +47,10 @@ public class FragmentHome extends Fragment {
     String[] new_result,result;
 
     MultiSnapRecyclerView firstRecyclerView;
-
     RecyclerView mRecyclerView;
+
+    ShimmerRecyclerView shimmerRecycler;
+    MerlinsBeard merlinsBeard;
 
     public FragmentHome() {
         // Required empty public constructor
@@ -52,23 +60,34 @@ public class FragmentHome extends Fragment {
                              Bundle savedInstanceState) {
 
         context = container.getContext();
+        merlinsBeard = MerlinsBeard.from(context);
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         firstRecyclerView = view.findViewById(R.id.first_recycler_view);
+
+        shimmerRecycler = view.findViewById(R.id.shimmer_grid);
+        shimmerRecycler.showShimmerAdapter();
+
         mRecyclerView = view.findViewById(R.id.home_grid);
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
 
-        if(savedInstanceState == null){
+        if (merlinsBeard.isConnected()) {
+            if(savedInstanceState == null){
 
-            //populate new arrivals
-            new NewArrivalsDescription().execute();
+                //populate new arrivals
+                new NewArrivalsDescription().execute();
 
-            //Populate popular
-            new PopularDescription().execute();
+                //Populate popular
+                new PopularDescription().execute();
 
-        }else{
-            savedDataState(savedInstanceState);
+            }else{
+                savedDataState(savedInstanceState);
+            }
+
+        } else {
+            StyleableToast.makeText(context, "Please check your internet connection!", Toast.LENGTH_LONG, R.style.No_Network).show();
         }
 
         return view;
@@ -77,6 +96,8 @@ public class FragmentHome extends Fragment {
 
     public void savedDataState(Bundle savedInstanceState){
 
+
+        shimmerRecycler.hideShimmerAdapter();
         new_shoe_image = savedInstanceState.getStringArrayList("new_shoe_image");
         new_shoe_name = savedInstanceState.getStringArrayList("new_shoe_name");
         new_shoe_link = savedInstanceState.getStringArrayList("new_shoe_link");
@@ -96,6 +117,7 @@ public class FragmentHome extends Fragment {
         //Staggered grid
         HomeAdapter adapter = new HomeAdapter(getActivity(),shoe_name,shoe_image,shoe_link,result);
         mRecyclerView.setAdapter(adapter);
+
         HomeClass decoration = new HomeClass(16);
         mRecyclerView.addItemDecoration(decoration);
     }
@@ -104,12 +126,12 @@ public class FragmentHome extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            newDialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
-            newDialog.getProgressHelper().setBarColor(Color.parseColor("#ff0000"));
-            newDialog.setTitleText("Fetching...");
-            newDialog.setContentText("New arrivals.");
-            newDialog.setCancelable(false);
-            newDialog.show();
+           // newDialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
+           // newDialog.getProgressHelper().setBarColor(Color.parseColor("#ff0000"));
+           // newDialog.setTitleText("Fetching...");
+           // newDialog.setContentText("New arrivals.");
+           // newDialog.setCancelable(false);
+           // newDialog.show();
 
             new_shoe_image.clear();
             new_shoe_name.clear();
@@ -145,7 +167,7 @@ public class FragmentHome extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            newDialog.dismissWithAnimation();
+            //newDialog.dismissWithAnimation();
 
             //Horizontal Scrolling
             HorizontalAdapter firstAdapter = new HorizontalAdapter(context,new_shoe_name,new_shoe_image,new_shoe_link,new_result);
@@ -159,12 +181,12 @@ public class FragmentHome extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pop_Dialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
-            pop_Dialog.getProgressHelper().setBarColor(Color.parseColor("#ff0000"));
-            pop_Dialog.setTitleText("Sorting...");
-            pop_Dialog.setContentText("Popular products");
-            pop_Dialog.setCancelable(false);
-            pop_Dialog.show();
+            //pop_Dialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
+            //pop_Dialog.getProgressHelper().setBarColor(Color.parseColor("#ff0000"));
+            //pop_Dialog.setTitleText("Sorting...");
+            //pop_Dialog.setContentText("Popular products");
+            //pop_Dialog.setCancelable(false);
+            //pop_Dialog.show();
 
             shoe_image.clear();
             shoe_name.clear();
@@ -200,11 +222,12 @@ public class FragmentHome extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            pop_Dialog.dismissWithAnimation();
-
+            //pop_Dialog.dismissWithAnimation();
             //Staggered grid
+            shimmerRecycler.hideShimmerAdapter();
             HomeAdapter adapter = new HomeAdapter(getActivity(),shoe_name,shoe_image,shoe_link,result);
             mRecyclerView.setAdapter(adapter);
+
             HomeClass decoration = new HomeClass(16);
             mRecyclerView.addItemDecoration(decoration);
         }

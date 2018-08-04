@@ -9,8 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 
-import africa.apeiron.batafind.OpeningActivity;
 import africa.apeiron.batafind.R;
+import africa.apeiron.batafind.REGISTRATION.SignUp;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 
@@ -46,7 +46,7 @@ public class SmsReceiver extends BroadcastReceiver {
             if (address.contains(number)) {
 
                 long[] vibrate = { 0, 200, 700 };
-                Intent intent = new Intent(myContext, OpeningActivity.class);
+                Intent intent = new Intent(myContext, SignUp.class);
                 intent.putExtra("myKey", body);
                 PendingIntent pendingIntent = PendingIntent.getActivity(myContext, 1, intent, 0);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -20,6 +20,7 @@ import africa.apeiron.batafind.FRAGMENTS.FragmentHome;
 import africa.apeiron.batafind.FRAGMENTS.FragmentKids;
 import africa.apeiron.batafind.FRAGMENTS.FragmentLadies;
 import africa.apeiron.batafind.FRAGMENTS.FragmentMen;
+import africa.apeiron.batafind.ProfileActivity;
 import africa.apeiron.batafind.R;
 import africa.apeiron.batafind.REGISTRATION.SignUp;
 
@@ -37,10 +38,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.home_activity);
         context = this;
         //calls the pager into the activity
-
         viewPager = findViewById(R.id.pager);
-       FragmentManager fragmentManager = getSupportFragmentManager();
-       viewPager.setAdapter(new MyAdapter(fragmentManager));
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        viewPager.setAdapter(new MyAdapter(fragmentManager));
 
         bottomBar = findViewById(R.id.bottomBar);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
@@ -70,7 +70,7 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.profile:
 
-                        Intent I = new Intent(HomeActivity.this, SignUp.class);
+                        Intent I = new Intent(HomeActivity.this, ProfileActivity.class);
                         startActivity(I);
                         break;
 
@@ -83,6 +83,10 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onTabReSelected(@IdRes int tabId) {
                 //Toast.makeText(getApplicationContext(), get(tabId, true), Toast.LENGTH_LONG).show();
+                if( tabId == R.id.profile){
+                    Intent I = new Intent(HomeActivity.this, ProfileActivity.class);
+                    startActivity(I);
+                }
             }
         });
 
