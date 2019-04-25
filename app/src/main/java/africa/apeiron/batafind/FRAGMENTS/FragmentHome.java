@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +15,8 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
@@ -49,8 +53,12 @@ public class FragmentHome extends Fragment {
     MultiSnapRecyclerView firstRecyclerView;
     RecyclerView mRecyclerView;
 
+    TextView new_arrivals,popular;
+    ImageView new_img,pd;
+
     ShimmerRecyclerView shimmerRecycler;
     MerlinsBeard merlinsBeard;
+    Fragment fragment = null;
 
     public FragmentHome() {
         // Required empty public constructor
@@ -64,6 +72,43 @@ public class FragmentHome extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        final TextView toolbar_title = view.findViewById(R.id.toolbar_title);
+
+        final CollapsingToolbarLayout collapsingToolbar = view.findViewById(R.id.toolbar_layout);
+        AppBarLayout appBarLayout = view.findViewById(R.id.app_bar);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean isShow = false;
+            int scrollRange = -1;
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbar.setTitle("");
+                    toolbar_title.setText("");
+                    isShow = true;
+                } else if (isShow) {
+                    collapsingToolbar.setTitle("");
+                    toolbar_title.setText("Popular Items");
+                    isShow = false;
+                }
+            }
+        });
+
+        new_arrivals = view.findViewById(R.id.new_arrivals);
+        popular = view.findViewById(R.id.popular);
+
+        pd = view.findViewById(R.id.pd);
+        new_img = view.findViewById(R.id.new_img);
+
+        new_arrivals.setVisibility(View.GONE);
+        popular.setVisibility(View.GONE);
+
+        new_img.setVisibility(View.GONE);
+        pd.setVisibility(View.GONE);
 
         firstRecyclerView = view.findViewById(R.id.first_recycler_view);
 
@@ -98,6 +143,13 @@ public class FragmentHome extends Fragment {
 
 
         shimmerRecycler.hideShimmerAdapter();
+
+        new_img.setVisibility(View.VISIBLE);
+        pd.setVisibility(View.VISIBLE);
+
+        new_arrivals.setVisibility(View.VISIBLE);
+        popular.setVisibility(View.VISIBLE);
+
         new_shoe_image = savedInstanceState.getStringArrayList("new_shoe_image");
         new_shoe_name = savedInstanceState.getStringArrayList("new_shoe_name");
         new_shoe_link = savedInstanceState.getStringArrayList("new_shoe_link");
@@ -225,6 +277,13 @@ public class FragmentHome extends Fragment {
             //pop_Dialog.dismissWithAnimation();
             //Staggered grid
             shimmerRecycler.hideShimmerAdapter();
+
+            new_img.setVisibility(View.VISIBLE);
+            pd.setVisibility(View.VISIBLE);
+
+            new_arrivals.setVisibility(View.VISIBLE);
+            popular.setVisibility(View.VISIBLE);
+
             HomeAdapter adapter = new HomeAdapter(getActivity(),shoe_name,shoe_image,shoe_link,result);
             mRecyclerView.setAdapter(adapter);
 

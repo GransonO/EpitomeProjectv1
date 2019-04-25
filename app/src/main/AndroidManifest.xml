@@ -45,7 +45,11 @@
             android:exported="false" />
 
         <activity android:name=".HOME.HomeActivity" />
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".PROFILE.ProfileActivity" />
+        <activity
+            android:name=".PROFILE.Personal_Account"
+            android:label="@string/title_activity_personal__account"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
