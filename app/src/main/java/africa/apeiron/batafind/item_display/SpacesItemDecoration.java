@@ -1,13 +1,16 @@
-package africa.apeiron.batafind.FRAGMENTS.GROUPED_CATEGORY;
+package africa.apeiron.batafind.item_display;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-public class Profile_Decorator extends RecyclerView.ItemDecoration {
+/**
+ * Created by Granson on 25-Mar-18.
+ */
+public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
     private final int mSpace;
 
-    public Profile_Decorator(int space) {
+    public SpacesItemDecoration(int space) {
         this.mSpace = space;
     }
 

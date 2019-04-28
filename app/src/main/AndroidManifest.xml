@@ -24,17 +24,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".REGISTRATION.SignUp">
+        <activity android:name=".registration.SignUp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ITEM_DISPLAY.DisplayProducts" />
-        <activity android:name=".ITEM_DETAILS.SelectedItem" />
+        <activity android:name=".item_display.DisplayProducts" />
+        <activity android:name=".item_details.SelectedItem" />
 
-        <receiver android:name=".SMS_ACTIVITIES.SmsReceiver">
+        <receiver android:name=".sms_activities.SmsReceiver">
             <intent-filter android:priority="2147483647">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
@@ -44,10 +44,10 @@
             android:name="com.novoda.merlin.service.MerlinService"
             android:exported="false" />
 
-        <activity android:name=".HOME.HomeActivity" />
-        <activity android:name=".PROFILE.ProfileActivity" />
+        <activity android:name=".home.HomeActivity" />
+        <activity android:name=".profile.ProfileActivity" />
         <activity
-            android:name=".PROFILE.Personal_Account"
+            android:name=".profile.Personal_Account"
             android:label="@string/title_activity_personal__account"
             android:theme="@style/AppTheme" />
     </application>

@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.HOME;
+package africa.apeiron.batafind.home;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,12 +15,12 @@ import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabReselectListener;
 import com.roughike.bottombar.OnTabSelectListener;
 
-import africa.apeiron.batafind.FRAGMENTS.FragmentHome;
-import africa.apeiron.batafind.FRAGMENTS.FragmentKids;
-import africa.apeiron.batafind.FRAGMENTS.FragmentLadies;
-import africa.apeiron.batafind.FRAGMENTS.FragmentMen;
-import africa.apeiron.batafind.PROFILE.Personal_Account;
-import africa.apeiron.batafind.PROFILE.ProfileActivity;
+import africa.apeiron.batafind.fragments.FragmentHome;
+import africa.apeiron.batafind.fragments.FragmentKids;
+import africa.apeiron.batafind.fragments.FragmentLadies;
+import africa.apeiron.batafind.fragments.FragmentMen;
+import africa.apeiron.batafind.profile.Personal_Account;
+import africa.apeiron.batafind.profile.ProfileActivity;
 import africa.apeiron.batafind.R;
 
 public class HomeActivity extends AppCompatActivity {

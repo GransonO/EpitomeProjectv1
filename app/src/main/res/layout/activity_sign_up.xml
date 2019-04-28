@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/in_shoes"
-    tools:context="africa.apeiron.batafind.REGISTRATION.SignUp">
+    tools:context="africa.apeiron.batafind.registration.SignUp">
 
 
     <EditText

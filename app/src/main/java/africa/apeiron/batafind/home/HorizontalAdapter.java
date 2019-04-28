@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.HOME;
+package africa.apeiron.batafind.home;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

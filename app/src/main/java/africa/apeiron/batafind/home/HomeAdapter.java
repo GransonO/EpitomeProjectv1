@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.HOME;
+package africa.apeiron.batafind.home;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -42,18 +42,20 @@ public MasonryView onCreateViewHolder(ViewGroup parent, int viewType) {
         }
 
 @Override
-public void onBindViewHolder(MasonryView holder, final int position) {
+public void onBindViewHolder(MasonryView holder, int position) {
 
         Picasso.get().load(shoe_image.get(position)).into(holder.imageView);
+        final int holderPosition = holder.getAdapterPosition();
 
         holder.imageView.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
 
-            Toast.makeText(myContext,shoe_name.get(position),Toast.LENGTH_LONG);
+            Toast.makeText(myContext,shoe_name.get(holderPosition),Toast.LENGTH_LONG).show();
 
             }
         });
+
         holder.textView.setText(shoe_name.get(position));
         }
 

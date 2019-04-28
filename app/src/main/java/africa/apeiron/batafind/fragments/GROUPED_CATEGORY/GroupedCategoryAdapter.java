@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.FRAGMENTS.GROUPED_CATEGORY;
+package africa.apeiron.batafind.fragments.GROUPED_CATEGORY;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.race604.drawable.wave.WaveDrawable;
 import com.squareup.picasso.Picasso;
 
 import org.jsoup.Jsoup;
@@ -22,7 +21,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import africa.apeiron.batafind.ITEM_DISPLAY.DisplayProducts;
+import africa.apeiron.batafind.item_display.DisplayProducts;
 import africa.apeiron.batafind.R;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -143,16 +142,16 @@ public class GroupedCategoryAdapter extends RecyclerView.Adapter<GroupedCategory
     }
 
     @Override
-    public void onBindViewHolder(MasonryView holder, final int position) {
+    public void onBindViewHolder(MasonryView holder, int position) {
 
         Picasso.get().load(imgList[position]).into(holder.imageView);
+        final int holderPosition = holder.getAdapterPosition();
 
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 shoe_prices.clear();
-                //Toast.makeText(context,nameList[position],Toast.LENGTH_LONG).show();
-                url = linksList[position];
+                url = linksList[holderPosition];
                 new Description().execute();
             }
         });
@@ -202,8 +201,6 @@ public class GroupedCategoryAdapter extends RecyclerView.Adapter<GroupedCategory
                 Elements images = document.getElementsByClass("product-image");
                 Elements price = document.getElementsByClass("changeCurr");
                 result = ((price.html().replace("[","")).replace("]","")).split("\n");
-
-                //shoe_prices = new ArrayList<String>(result);
 
                 for (Element image : images) {
                     Elements values = image.select("img");

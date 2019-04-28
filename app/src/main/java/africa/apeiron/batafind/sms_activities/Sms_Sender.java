@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.SMS_ACTIVITIES;
+package africa.apeiron.batafind.sms_activities;
 
 import android.app.Activity;
 import android.app.PendingIntent;

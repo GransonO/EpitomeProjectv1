@@ -1,8 +1,6 @@
-package africa.apeiron.batafind.FRAGMENTS;
+package africa.apeiron.batafind.fragments;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -32,13 +30,10 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import africa.apeiron.batafind.HOME.HomeActivity;
-import africa.apeiron.batafind.HOME.HomeAdapter;
-import africa.apeiron.batafind.HOME.HomeClass;
-import africa.apeiron.batafind.HOME.HorizontalAdapter;
+import africa.apeiron.batafind.home.HomeAdapter;
+import africa.apeiron.batafind.home.HomeClass;
+import africa.apeiron.batafind.home.HorizontalAdapter;
 import africa.apeiron.batafind.R;
-import africa.apeiron.batafind.REGISTRATION.SignUp;
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class FragmentHome extends Fragment {
 

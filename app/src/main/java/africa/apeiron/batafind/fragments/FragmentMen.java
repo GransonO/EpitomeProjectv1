@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.FRAGMENTS;
+package africa.apeiron.batafind.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,16 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import africa.apeiron.batafind.FRAGMENTS.GROUPED_CATEGORY.GCSpacesItemDecoration;
-import africa.apeiron.batafind.FRAGMENTS.GROUPED_CATEGORY.GroupedCategoryAdapter;
+import africa.apeiron.batafind.fragments.GROUPED_CATEGORY.GCSpacesItemDecoration;
+import africa.apeiron.batafind.fragments.GROUPED_CATEGORY.GroupedCategoryAdapter;
 import africa.apeiron.batafind.R;
 
-
-public class FragmentLadies extends Fragment {
+public class FragmentMen extends Fragment {
 
     RecyclerView mRecyclerView;
 
-    public FragmentLadies() {
+    public FragmentMen() {
         // Required empty public constructor
     }
 
@@ -30,10 +29,11 @@ public class FragmentLadies extends Fragment {
         mRecyclerView = view.findViewById(R.id.masonry_grid);
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
 
-        GroupedCategoryAdapter adapter = new GroupedCategoryAdapter(getActivity(),"Ladies");
+        GroupedCategoryAdapter adapter = new GroupedCategoryAdapter(getActivity(),"Men");
         mRecyclerView.setAdapter(adapter);
         GCSpacesItemDecoration decoration = new GCSpacesItemDecoration(16);
         mRecyclerView.addItemDecoration(decoration);
 
-        return view;}
+        return view;
+    }
 }

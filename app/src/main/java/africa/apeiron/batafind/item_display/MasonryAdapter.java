@@ -1,8 +1,7 @@
-package africa.apeiron.batafind.ITEM_DISPLAY;
+package africa.apeiron.batafind.item_display;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,14 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-import africa.apeiron.batafind.ITEM_DETAILS.SelectedItem;
+import africa.apeiron.batafind.item_details.SelectedItem;
 import africa.apeiron.batafind.R;
 
 /**
@@ -28,9 +25,9 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
     private Context context;
     MasonryView holder;
 
-    ArrayList<String> shoe_image = new ArrayList<>();
-    ArrayList<String> shoe_name = new ArrayList<>();
-    ArrayList<String> shoe_link = new ArrayList<>();
+    ArrayList<String> shoe_image;
+    ArrayList<String> shoe_name;
+    ArrayList<String> shoe_link;
     String[] shoe_price;
 
     public MasonryAdapter(Context context, ArrayList<String> image,ArrayList<String> name,ArrayList<String> link,String[] Prices) {
@@ -50,20 +47,20 @@ public class MasonryAdapter extends RecyclerView.Adapter<MasonryAdapter.MasonryV
     }
 
     @Override
-    public void onBindViewHolder(MasonryView holder, final int position) {
+    public void onBindViewHolder(MasonryView holder, int position) {
         this.holder = holder;
 
         Picasso.get().load(shoe_image.get(position)).into(holder.imageView);
+        final int holderPosition = holder.getAdapterPosition();
 
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent I = new Intent(context, SelectedItem.class);
-                I.putExtra("shoe_image",shoe_image.get(position));
-                I.putExtra("shoe_name",shoe_name.get(position));
-                I.putExtra("shoe_link",shoe_link.get(position));
-                I.putExtra("shoe_price",shoe_price[position]);
+                I.putExtra("shoe_image",shoe_image.get(holderPosition));
+                I.putExtra("shoe_name",shoe_name.get(holderPosition));
+                I.putExtra("shoe_link",shoe_link.get(holderPosition));
+                I.putExtra("shoe_price",shoe_price[holderPosition]);
                 context.startActivity(I);
             }
         });

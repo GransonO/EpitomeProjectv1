@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.SMS_ACTIVITIES;
+package africa.apeiron.batafind.sms_activities;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.telephony.SmsMessage;
 
 import africa.apeiron.batafind.R;
-import africa.apeiron.batafind.REGISTRATION.SignUp;
+import africa.apeiron.batafind.registration.SignUp;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 

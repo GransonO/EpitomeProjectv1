@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.FRAGMENTS;
+package africa.apeiron.batafind.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import africa.apeiron.batafind.FRAGMENTS.GROUPED_CATEGORY.GCSpacesItemDecoration;
-import africa.apeiron.batafind.FRAGMENTS.GROUPED_CATEGORY.GroupedCategoryAdapter;
+import africa.apeiron.batafind.fragments.GROUPED_CATEGORY.GCSpacesItemDecoration;
+import africa.apeiron.batafind.fragments.GROUPED_CATEGORY.GroupedCategoryAdapter;
 import africa.apeiron.batafind.R;
 
 public class FragmentKids extends Fragment {

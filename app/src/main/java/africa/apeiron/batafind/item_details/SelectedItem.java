@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.ITEM_DETAILS;
+package africa.apeiron.batafind.item_details;
 
 import android.content.Context;
 import android.content.Intent;
@@ -30,7 +30,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import africa.apeiron.batafind.R;
-import africa.apeiron.batafind.SMS_ACTIVITIES.Sms_Sender;
+import africa.apeiron.batafind.sms_activities.Sms_Sender;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import info.hoang8f.android.segmented.SegmentedGroup;
 

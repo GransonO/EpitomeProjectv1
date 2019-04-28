@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.TESTER;
+package africa.apeiron.batafind.tester;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -12,11 +12,10 @@ import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
-import africa.apeiron.batafind.FRAGMENTS.FragmentHome;
-import africa.apeiron.batafind.FRAGMENTS.FragmentKids;
-import africa.apeiron.batafind.FRAGMENTS.FragmentLadies;
-import africa.apeiron.batafind.FRAGMENTS.FragmentMen;
-import africa.apeiron.batafind.HOME.HomeActivity;
+import africa.apeiron.batafind.fragments.FragmentHome;
+import africa.apeiron.batafind.fragments.FragmentKids;
+import africa.apeiron.batafind.fragments.FragmentLadies;
+import africa.apeiron.batafind.fragments.FragmentMen;
 import africa.apeiron.batafind.R;
 
 public class MainActivity extends AppCompatActivity {

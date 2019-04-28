@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/leather_txt"
-    tools:context="africa.apeiron.batafind.ITEM_DETAILS.SelectedItem">
+    tools:context="africa.apeiron.batafind.item_details.SelectedItem">
 
     <ImageView
         android:id="@+id/selected_image"
@@ -114,8 +114,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/selected_image"
-        android:layout_weight="1"
-        android:textSize="12dp"
+        android:textSize="12sp"
         android:fontFamily="@font/gotham"
         android:textColor="#ffffff"
         android:background="@drawable/button_pressed"

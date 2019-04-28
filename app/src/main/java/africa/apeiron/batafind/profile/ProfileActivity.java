@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.PROFILE;
+package africa.apeiron.batafind.profile;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,9 +7,8 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import africa.apeiron.batafind.FRAGMENTS.GROUPED_CATEGORY.GCSpacesItemDecoration;
-import africa.apeiron.batafind.FRAGMENTS.GROUPED_CATEGORY.GroupedCategoryAdapter;
-import africa.apeiron.batafind.FRAGMENTS.GROUPED_CATEGORY.Profile_Decorator;
+import africa.apeiron.batafind.fragments.GROUPED_CATEGORY.GroupedCategoryAdapter;
+import africa.apeiron.batafind.fragments.GROUPED_CATEGORY.Profile_Decorator;
 import africa.apeiron.batafind.R;
 
 public class ProfileActivity extends AppCompatActivity {

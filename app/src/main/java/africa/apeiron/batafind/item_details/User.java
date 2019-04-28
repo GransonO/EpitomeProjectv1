@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.ITEM_DETAILS;
+package africa.apeiron.batafind.item_details;
 
 /**
  * Created by Granson on 01-Apr-18.

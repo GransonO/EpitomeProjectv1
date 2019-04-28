@@ -1,4 +1,4 @@
-package africa.apeiron.batafind.REGISTRATION;
+package africa.apeiron.batafind.registration;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,7 +12,7 @@ import com.appus.splash.Splash;
 import com.muddzdev.styleabletoastlibrary.StyleableToast;
 import com.novoda.merlin.MerlinsBeard;
 
-import africa.apeiron.batafind.HOME.HomeActivity;
+import africa.apeiron.batafind.home.HomeActivity;
 import africa.apeiron.batafind.R;
 
 public class SignUp extends AppCompatActivity {

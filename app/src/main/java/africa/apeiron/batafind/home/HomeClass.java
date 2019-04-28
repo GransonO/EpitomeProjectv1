@@ -1,16 +1,17 @@
-package africa.apeiron.batafind.ITEM_DISPLAY;
+package africa.apeiron.batafind.home;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 /**
- * Created by Granson on 25-Mar-18.
+ * Created by Granson on 08-Apr-18.
  */
-public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
+
+public class HomeClass extends RecyclerView.ItemDecoration {
     private final int mSpace;
 
-    public SpacesItemDecoration(int space) {
+    public HomeClass(int space) {
         this.mSpace = space;
     }
 
