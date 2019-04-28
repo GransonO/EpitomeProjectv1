@@ -21,12 +21,8 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
-<<<<<<< HEAD
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-=======
     implementation 'com.android.support:exifinterface:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
->>>>>>> first issue solving
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:support-v4:27.1.1'
@@ -47,7 +43,6 @@ dependencies {
     implementation 'com.roughike:bottom-bar:2.3.1'
     implementation 'com.github.ratty3697:android-smart-animation-library:1.6'
     implementation 'com.race604.waveloading:library:1.1.1'
-    implementation 'pro.appus:zoom-splash:1.0.0'
     implementation 'com.airbnb.android:lottie:2.5.4'
     implementation 'com.novoda:merlin:1.1.7'
     implementation 'com.muddzdev:styleabletoast:2.1.2'

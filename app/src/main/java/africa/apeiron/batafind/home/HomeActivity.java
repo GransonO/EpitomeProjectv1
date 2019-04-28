@@ -11,21 +11,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabReselectListener;
 import com.roughike.bottombar.OnTabSelectListener;
 
+import africa.apeiron.batafind.R;
 import africa.apeiron.batafind.fragments.FragmentHome;
 import africa.apeiron.batafind.fragments.FragmentKids;
 import africa.apeiron.batafind.fragments.FragmentLadies;
 import africa.apeiron.batafind.fragments.FragmentMen;
 import africa.apeiron.batafind.profile.Personal_Account;
 import africa.apeiron.batafind.profile.ProfileActivity;
-import africa.apeiron.batafind.R;
 
 public class HomeActivity extends AppCompatActivity {
 
-    BottomBarTab men,ladies,kids,home;
     BottomBar bottomBar;
     ViewPager viewPager;
     Context context;
@@ -45,16 +43,13 @@ public class HomeActivity extends AppCompatActivity {
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
-                //messageView.setText(TabMessage.get(tabId, false));
                 switch (tabId){
 
                     case R.id.home:
-
                         viewPager.setCurrentItem(0);
                         break;
 
                     case R.id.men:
-
                         viewPager.setCurrentItem(1);
                         break;
 
@@ -64,13 +59,18 @@ public class HomeActivity extends AppCompatActivity {
                         break;
 
                     case R.id.kids:
-
                         viewPager.setCurrentItem(3);
                         break;
-                    case R.id.profile:
 
-                        Intent I = new Intent(HomeActivity.this, Personal_Account.class);
-                        startActivity(I);
+//                    case R.id.profile:
+//                        Intent I = new Intent(HomeActivity.this, Personal_Account.class);
+//                        startActivity(I);
+//                        break;
+//                        This should be added to to the profile activity
+
+                    case R.id.profile:
+                        Intent x = new Intent(HomeActivity.this, ProfileActivity.class);
+                        startActivity(x);
                         break;
 
 
@@ -81,7 +81,6 @@ public class HomeActivity extends AppCompatActivity {
         bottomBar.setOnTabReselectListener(new OnTabReselectListener() {
             @Override
             public void onTabReSelected(@IdRes int tabId) {
-                //Toast.makeText(getApplicationContext(), get(tabId, true), Toast.LENGTH_LONG).show();
                 if( tabId == R.id.profile){
                     Intent I = new Intent(HomeActivity.this, ProfileActivity.class);
                     startActivity(I);
