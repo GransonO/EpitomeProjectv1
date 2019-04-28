@@ -8,7 +8,7 @@
     <color name="black_overlay">#66000000</color>
 
     <!--Bottom Nav Bar-->
-    <color name="bb_inActiveBottomBarItemColor">#747474</color>
+    <color name="bb_inActiveBottomBarItemColor">#6e6e6e</color>
     <color name="bb_darkBackgroundColor">#212121</color>
     <color name="bb_tabletRightBorderDark">#505050</color>
 

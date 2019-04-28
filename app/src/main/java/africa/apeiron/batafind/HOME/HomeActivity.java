@@ -9,7 +9,6 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarTab;
@@ -20,9 +19,9 @@ import africa.apeiron.batafind.FRAGMENTS.FragmentHome;
 import africa.apeiron.batafind.FRAGMENTS.FragmentKids;
 import africa.apeiron.batafind.FRAGMENTS.FragmentLadies;
 import africa.apeiron.batafind.FRAGMENTS.FragmentMen;
-import africa.apeiron.batafind.ProfileActivity;
+import africa.apeiron.batafind.PROFILE.Personal_Account;
+import africa.apeiron.batafind.PROFILE.ProfileActivity;
 import africa.apeiron.batafind.R;
-import africa.apeiron.batafind.REGISTRATION.SignUp;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -70,7 +69,7 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.profile:
 
-                        Intent I = new Intent(HomeActivity.this, ProfileActivity.class);
+                        Intent I = new Intent(HomeActivity.this, Personal_Account.class);
                         startActivity(I);
                         break;
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -7,59 +7,91 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:id="@+id/app_bar"
         app:elevation="0dp"
         android:background="@android:color/transparent">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:background="#fff"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
 
             <RelativeLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="5dp">
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp">
 
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="30dp"
-                    android:id="@+id/new_img"
-                    android:src="@drawable/new_arrivals"
-                    android:contentDescription="@string/todo" />
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/new_img"
+                        android:src="@drawable/new_arrivals"
+                        android:contentDescription="@string/todo" />
+
+                    <TextView
+                        android:id="@+id/new_arrivals"
+                        android:layout_width="338dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="40dp"
+                        android:fontFamily="@font/gotham"
+                        android:gravity="bottom"
+                        android:text="@string/NA"
+                        android:textColor="#545454"
+                        android:textSize="18sp" />
+
+
+                    <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+                        android:id="@+id/first_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/new_img"
+                        android:layout_gravity="center_vertical"
+                        app:msrv_gravity="start"
+                        app:msrv_ms_per_inch="@dimen/normal_speed"/>
+
+                </RelativeLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
 
                 <TextView
-                    android:id="@+id/new_arrivals"
-                    android:layout_width="338dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginStart="40dp"
-                    android:fontFamily="@font/gotham"
-                    android:gravity="bottom"
-                    android:text="@string/NA"
-                    android:textColor="#545454"
-                    android:textSize="18sp" />
-
-
-                <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
-                    android:id="@+id/first_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/new_img"
-                    android:layout_gravity="center_vertical"
-                    app:msrv_gravity="start"
-                    app:msrv_ms_per_inch="@dimen/normal_speed" />
+                    android:text=""
+                    android:fontFamily="@font/gotham"
+                    android:textColor="#e4e4e4"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:id="@+id/toolbar_title" />
 
-            </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
 
-        </LinearLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
 
-    </android.support.design.widget.AppBarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_gravity="fill_vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <RelativeLayout
             android:layout_height="wrap_content"
@@ -79,6 +111,7 @@
 
             <TextView
                 android:layout_width="341dp"
+                android:id="@+id/popular"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="40dp"
@@ -110,4 +143,6 @@
 
         </RelativeLayout>
 
-</RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

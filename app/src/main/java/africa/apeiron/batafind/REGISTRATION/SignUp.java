@@ -39,6 +39,7 @@ public class SignUp extends AppCompatActivity {
 
                 if (merlinsBeard.isConnected()) {
                     Intent X = new Intent(SignUp.this,HomeActivity.class);
+                    //Intent X = new Intent(SignUp.this,MainActivity.class);
                     startActivity(X);
                 } else {
                     StyleableToast.makeText(SignUp.this, "Please check your internet connection!", Toast.LENGTH_LONG, R.style.No_Network).show();

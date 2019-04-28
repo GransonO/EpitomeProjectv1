@@ -17,11 +17,12 @@
         android:ems="10"
         android:fontFamily="@font/gotham"
         android:hint="Username"
+        android:paddingLeft="10dp"
         android:inputType="textPersonName"
         android:padding="5dp"
         android:singleLine="true"
         android:textAlignment="viewStart"
-        android:textColor="#ff3939" />
+        android:textColor="#303030" />
 
     <EditText
         android:id="@+id/password_edit"
@@ -32,13 +33,14 @@
         android:layout_marginBottom="227dp"
         android:background="@drawable/back_shape"
         android:ems="10"
+        android:paddingLeft="10dp"
         android:fontFamily="@font/gotham"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="5dp"
         android:singleLine="true"
         android:textAlignment="viewStart"
-        android:textColor="#ff3939" />
+        android:textColor="#303030" />
 
     <Button
         android:id="@+id/submit_btn"
@@ -86,7 +88,7 @@
         android:layout_marginBottom="94dp"
         android:fontFamily="@font/gotham"
         android:text="login using"
-        android:textColor="#710101"
+        android:textColor="#414141"
         android:textSize="20sp" />
 
 
